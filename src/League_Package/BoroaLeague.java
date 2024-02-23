@@ -26,7 +26,7 @@ public class BoroaLeague extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        DG_CraerJEquipo = new javax.swing.JDialog();
+        DG_CraerEquipo = new javax.swing.JDialog();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -34,14 +34,31 @@ public class BoroaLeague extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         LB_FifaLogo = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
+        TF_addEstadio = new javax.swing.JTextField();
+        TF_addPais = new javax.swing.JTextField();
+        TF_addNombreEquipo = new javax.swing.JTextField();
+        TF_addCiudad = new javax.swing.JTextField();
         PN_SalirCE = new javax.swing.JPanel();
         LB_salir1 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
+        PN_AgregarEquipo = new javax.swing.JPanel();
+        LB_AgegarEquipo = new javax.swing.JLabel();
+        DG_CraerJuagdor = new javax.swing.JDialog();
+        jPanel5 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        LB_FifaLogo1 = new javax.swing.JLabel();
+        TF_addEstadio1 = new javax.swing.JTextField();
+        TF_addPais1 = new javax.swing.JTextField();
+        TF_addNombreEquipo1 = new javax.swing.JTextField();
+        TF_addCiudad1 = new javax.swing.JTextField();
+        PN_SalirCE1 = new javax.swing.JPanel();
+        LB_salir2 = new javax.swing.JLabel();
+        PN_AgregarEquipo1 = new javax.swing.JPanel();
+        LB_AgegarEquipo1 = new javax.swing.JLabel();
+        DG_Transferir = new javax.swing.JDialog();
         jPanel1 = new javax.swing.JPanel();
         TB_AdminMenu = new javax.swing.JToolBar();
         LB_CrearEquipo = new javax.swing.JLabel();
@@ -60,7 +77,7 @@ public class BoroaLeague extends javax.swing.JFrame {
         MI_Transferir = new javax.swing.JMenuItem();
         M_Ayuda = new javax.swing.JMenu();
 
-        DG_CraerJEquipo.setUndecorated(true);
+        DG_CraerEquipo.setUndecorated(true);
 
         jPanel4.setBackground(new java.awt.Color(0, 102, 102));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -90,10 +107,10 @@ public class BoroaLeague extends javax.swing.JFrame {
         jLabel5.setText("Crear Equipos");
         jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 240, 70));
         jPanel4.add(LB_FifaLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 50, 30));
-        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 210, -1));
-        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 210, -1));
-        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 210, -1));
-        jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 210, -1));
+        jPanel4.add(TF_addEstadio, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 210, -1));
+        jPanel4.add(TF_addPais, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 210, -1));
+        jPanel4.add(TF_addNombreEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 210, -1));
+        jPanel4.add(TF_addCiudad, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 210, -1));
 
         PN_SalirCE.setBackground(new java.awt.Color(153, 153, 153));
         PN_SalirCE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -125,40 +142,150 @@ public class BoroaLeague extends javax.swing.JFrame {
 
         jPanel4.add(PN_SalirCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
 
-        jPanel3.setBackground(new java.awt.Color(0, 51, 51));
+        PN_AgregarEquipo.setBackground(new java.awt.Color(0, 153, 153));
 
-        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel6.setText("Agregar");
+        LB_AgegarEquipo.setBackground(new java.awt.Color(204, 204, 204));
+        LB_AgegarEquipo.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LB_AgegarEquipo.setText("Agregar");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout PN_AgregarEquipoLayout = new javax.swing.GroupLayout(PN_AgregarEquipo);
+        PN_AgregarEquipo.setLayout(PN_AgregarEquipoLayout);
+        PN_AgregarEquipoLayout.setHorizontalGroup(
+            PN_AgregarEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PN_AgregarEquipoLayout.createSequentialGroup()
                 .addContainerGap(30, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(LB_AgegarEquipo, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        PN_AgregarEquipoLayout.setVerticalGroup(
+            PN_AgregarEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PN_AgregarEquipoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addComponent(LB_AgegarEquipo, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 120, 50));
+        jPanel4.add(PN_AgregarEquipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 120, 50));
 
-        javax.swing.GroupLayout DG_CraerJEquipoLayout = new javax.swing.GroupLayout(DG_CraerJEquipo.getContentPane());
-        DG_CraerJEquipo.getContentPane().setLayout(DG_CraerJEquipoLayout);
-        DG_CraerJEquipoLayout.setHorizontalGroup(
-            DG_CraerJEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout DG_CraerEquipoLayout = new javax.swing.GroupLayout(DG_CraerEquipo.getContentPane());
+        DG_CraerEquipo.getContentPane().setLayout(DG_CraerEquipoLayout);
+        DG_CraerEquipoLayout.setHorizontalGroup(
+            DG_CraerEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
         );
-        DG_CraerJEquipoLayout.setVerticalGroup(
-            DG_CraerJEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        DG_CraerEquipoLayout.setVerticalGroup(
+            DG_CraerEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+        );
+
+        jPanel5.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel6.setText("estadio");
+        jPanel5.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 130, 30));
+
+        jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel7.setText("Pais del equipo");
+        jPanel5.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 130, 30));
+
+        jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel8.setText("Nombre del equipo");
+        jPanel5.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 130, 30));
+
+        jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel9.setText("ciudad ");
+        jPanel5.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 130, 30));
+
+        jLabel10.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Crear Jugadores");
+        jPanel5.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 240, 70));
+        jPanel5.add(LB_FifaLogo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 360, 50, 30));
+        jPanel5.add(TF_addEstadio1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 210, -1));
+        jPanel5.add(TF_addPais1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 210, -1));
+        jPanel5.add(TF_addNombreEquipo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 210, -1));
+        jPanel5.add(TF_addCiudad1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 210, -1));
+
+        PN_SalirCE1.setBackground(new java.awt.Color(153, 153, 153));
+        PN_SalirCE1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PN_SalirCE1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PN_SalirCE1MouseClicked(evt);
+            }
+        });
+
+        LB_salir2.setForeground(new java.awt.Color(0, 0, 0));
+        LB_salir2.setText("X");
+
+        javax.swing.GroupLayout PN_SalirCE1Layout = new javax.swing.GroupLayout(PN_SalirCE1);
+        PN_SalirCE1.setLayout(PN_SalirCE1Layout);
+        PN_SalirCE1Layout.setHorizontalGroup(
+            PN_SalirCE1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PN_SalirCE1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LB_salir2, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        PN_SalirCE1Layout.setVerticalGroup(
+            PN_SalirCE1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PN_SalirCE1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LB_salir2, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel5.add(PN_SalirCE1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
+
+        PN_AgregarEquipo1.setBackground(new java.awt.Color(0, 153, 153));
+
+        LB_AgegarEquipo1.setBackground(new java.awt.Color(204, 204, 204));
+        LB_AgegarEquipo1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        LB_AgegarEquipo1.setText("Agregar");
+
+        javax.swing.GroupLayout PN_AgregarEquipo1Layout = new javax.swing.GroupLayout(PN_AgregarEquipo1);
+        PN_AgregarEquipo1.setLayout(PN_AgregarEquipo1Layout);
+        PN_AgregarEquipo1Layout.setHorizontalGroup(
+            PN_AgregarEquipo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PN_AgregarEquipo1Layout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(LB_AgegarEquipo1, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+        PN_AgregarEquipo1Layout.setVerticalGroup(
+            PN_AgregarEquipo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PN_AgregarEquipo1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LB_AgegarEquipo1, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel5.add(PN_AgregarEquipo1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 120, 50));
+
+        javax.swing.GroupLayout DG_CraerJuagdorLayout = new javax.swing.GroupLayout(DG_CraerJuagdor.getContentPane());
+        DG_CraerJuagdor.getContentPane().setLayout(DG_CraerJuagdorLayout);
+        DG_CraerJuagdorLayout.setHorizontalGroup(
+            DG_CraerJuagdorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
+        );
+        DG_CraerJuagdorLayout.setVerticalGroup(
+            DG_CraerJuagdorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout DG_TransferirLayout = new javax.swing.GroupLayout(DG_Transferir.getContentPane());
+        DG_Transferir.getContentPane().setLayout(DG_TransferirLayout);
+        DG_TransferirLayout.setHorizontalGroup(
+            DG_TransferirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        DG_TransferirLayout.setVerticalGroup(
+            DG_TransferirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -282,15 +409,19 @@ public class BoroaLeague extends javax.swing.JFrame {
 
     private void LB_CrearEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LB_CrearEquipoMouseClicked
         this.setVisible(false);
-        CrearEquipo(true);
+        AbrirMenuCrearEquipo(true);
     }//GEN-LAST:event_LB_CrearEquipoMouseClicked
 
     private void PN_SalirCEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PN_SalirCEMouseClicked
-        DG_CraerJEquipo.setVisible(false);
+        DG_CraerEquipo.setVisible(false);
         this.pack();
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }//GEN-LAST:event_PN_SalirCEMouseClicked
+
+    private void PN_SalirCE1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PN_SalirCE1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_PN_SalirCE1MouseClicked
 
     
     public static void main(String args[]) {
@@ -333,47 +464,68 @@ public class BoroaLeague extends javax.swing.JFrame {
         this.repaint();
     }
     
-    public void CrearEquipo(boolean vista){
-        DG_CraerJEquipo.pack();
-        DG_CraerJEquipo.setLocationRelativeTo(this);
+    public void AbrirMenuCrearEquipo(boolean vista){
+        DG_CraerEquipo.pack();
+        DG_CraerEquipo.setLocationRelativeTo(this);
         setimageLabel(LB_FifaLogo, "src/imagen/LogoFifa.png");
-        DG_CraerJEquipo.setModal(vista);
-        DG_CraerJEquipo.setVisible(vista);
+        DG_CraerEquipo.setModal(vista);
+        DG_CraerEquipo.setVisible(vista);
+    }
+    
+    public void crearEquipo(){
+        
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JDialog DG_CraerJEquipo;
+    private javax.swing.JDialog DG_CraerEquipo;
+    private javax.swing.JDialog DG_CraerJuagdor;
+    private javax.swing.JDialog DG_Transferir;
+    private javax.swing.JLabel LB_AgegarEquipo;
+    private javax.swing.JLabel LB_AgegarEquipo1;
     private javax.swing.JLabel LB_CraerJugador;
     private javax.swing.JLabel LB_CrearEquipo;
     private javax.swing.JLabel LB_FifaLogo;
+    private javax.swing.JLabel LB_FifaLogo1;
     private javax.swing.JLabel LB_Transferir;
     private javax.swing.JLabel LB_logoleague;
     private javax.swing.JLabel LB_salir;
     private javax.swing.JLabel LB_salir1;
+    private javax.swing.JLabel LB_salir2;
     private javax.swing.JMenuBar MB_menu;
     private javax.swing.JMenuItem MI_CraerJugador;
     private javax.swing.JMenuItem MI_CrearEquipo;
     private javax.swing.JMenuItem MI_Transferir;
     private javax.swing.JMenu M_Ayuda;
     private javax.swing.JMenu M_Opciones;
+    private javax.swing.JPanel PN_AgregarEquipo;
+    private javax.swing.JPanel PN_AgregarEquipo1;
     private javax.swing.JPanel PN_Salir;
     private javax.swing.JPanel PN_SalirCE;
+    private javax.swing.JPanel PN_SalirCE1;
     private javax.swing.JToolBar TB_AdminMenu;
+    private javax.swing.JTextField TF_addCiudad;
+    private javax.swing.JTextField TF_addCiudad1;
+    private javax.swing.JTextField TF_addEstadio;
+    private javax.swing.JTextField TF_addEstadio1;
+    private javax.swing.JTextField TF_addNombreEquipo;
+    private javax.swing.JTextField TF_addNombreEquipo1;
+    private javax.swing.JTextField TF_addPais;
+    private javax.swing.JTextField TF_addPais1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JToolBar.Separator jSeparator1;
     private javax.swing.JToolBar.Separator jSeparator2;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
