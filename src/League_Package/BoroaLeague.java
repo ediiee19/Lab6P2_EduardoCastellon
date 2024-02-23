@@ -11,6 +11,8 @@ public class BoroaLeague extends javax.swing.JFrame {
 
     public BoroaLeague() {
         initComponents();
+        
+        this.setLocationRelativeTo(null);
         setimageLabel(LB_logoleague, "src/imagen/LogoBoroa.jpg");
         
     }
@@ -24,14 +26,32 @@ public class BoroaLeague extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        DG_CraerJEquipo = new javax.swing.JDialog();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        LB_FifaLogo = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
+        jTextField3 = new javax.swing.JTextField();
+        jTextField4 = new javax.swing.JTextField();
+        PN_SalirCE = new javax.swing.JPanel();
+        LB_salir1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         TB_AdminMenu = new javax.swing.JToolBar();
         LB_CrearEquipo = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JToolBar.Separator();
         LB_CraerJugador = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JToolBar.Separator();
         LB_Transferir = new javax.swing.JLabel();
         LB_logoleague = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
+        PN_Salir = new javax.swing.JPanel();
         LB_salir = new javax.swing.JLabel();
         MB_menu = new javax.swing.JMenuBar();
         M_Opciones = new javax.swing.JMenu();
@@ -40,28 +60,141 @@ public class BoroaLeague extends javax.swing.JFrame {
         MI_Transferir = new javax.swing.JMenuItem();
         M_Ayuda = new javax.swing.JMenu();
 
+        DG_CraerJEquipo.setUndecorated(true);
+
+        jPanel4.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel1.setText("estadio");
+        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 130, 30));
+
+        jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel2.setText("Pais del equipo");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 130, 30));
+
+        jLabel3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel3.setText("Nombre del equipo");
+        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 180, 130, 30));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(153, 204, 255));
+        jLabel4.setText("ciudad ");
+        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 130, 30));
+
+        jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("Crear Equipos");
+        jPanel4.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 240, 70));
+        jPanel4.add(LB_FifaLogo, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 370, 50, 30));
+        jPanel4.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 210, -1));
+        jPanel4.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 210, -1));
+        jPanel4.add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 210, -1));
+        jPanel4.add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 210, -1));
+
+        PN_SalirCE.setBackground(new java.awt.Color(153, 153, 153));
+        PN_SalirCE.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PN_SalirCE.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PN_SalirCEMouseClicked(evt);
+            }
+        });
+
+        LB_salir1.setForeground(new java.awt.Color(0, 0, 0));
+        LB_salir1.setText("X");
+
+        javax.swing.GroupLayout PN_SalirCELayout = new javax.swing.GroupLayout(PN_SalirCE);
+        PN_SalirCE.setLayout(PN_SalirCELayout);
+        PN_SalirCELayout.setHorizontalGroup(
+            PN_SalirCELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PN_SalirCELayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LB_salir1, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+        );
+        PN_SalirCELayout.setVerticalGroup(
+            PN_SalirCELayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PN_SalirCELayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(LB_salir1, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jPanel4.add(PN_SalirCE, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 10, -1, -1));
+
+        jPanel3.setBackground(new java.awt.Color(0, 51, 51));
+
+        jLabel6.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        jLabel6.setText("Agregar");
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap(30, Short.MAX_VALUE)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(28, 28, 28))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 330, 120, 50));
+
+        javax.swing.GroupLayout DG_CraerJEquipoLayout = new javax.swing.GroupLayout(DG_CraerJEquipo.getContentPane());
+        DG_CraerJEquipo.getContentPane().setLayout(DG_CraerJEquipoLayout);
+        DG_CraerJEquipoLayout.setHorizontalGroup(
+            DG_CraerJEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 453, Short.MAX_VALUE)
+        );
+        DG_CraerJEquipoLayout.setVerticalGroup(
+            DG_CraerJEquipoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
 
-        jPanel1.setBackground(new java.awt.Color(0, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setForeground(new java.awt.Color(0, 153, 153));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        TB_AdminMenu.setBackground(new java.awt.Color(0, 153, 153));
+        TB_AdminMenu.setForeground(new java.awt.Color(153, 255, 204));
         TB_AdminMenu.setRollover(true);
 
         LB_CrearEquipo.setText("Crear Equipo");
+        LB_CrearEquipo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        LB_CrearEquipo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LB_CrearEquipoMouseClicked(evt);
+            }
+        });
         TB_AdminMenu.add(LB_CrearEquipo);
+        TB_AdminMenu.add(jSeparator1);
 
         LB_CraerJugador.setText("Crear Jugador");
+        LB_CraerJugador.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         TB_AdminMenu.add(LB_CraerJugador);
+        TB_AdminMenu.add(jSeparator2);
 
         LB_Transferir.setText("Transfeir");
+        LB_Transferir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         TB_AdminMenu.add(LB_Transferir);
 
-        jPanel1.add(TB_AdminMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 270, 50));
+        jPanel1.add(TB_AdminMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 300, 40));
         jPanel1.add(LB_logoleague, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 600, 380));
 
-        jPanel2.setBackground(new java.awt.Color(60, 153, 179));
+        jPanel2.setBackground(new java.awt.Color(60, 105, 105));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -71,40 +204,40 @@ public class BoroaLeague extends javax.swing.JFrame {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 90, Short.MAX_VALUE)
+            .addGap(0, 60, Short.MAX_VALUE)
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 420, 700, 90));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 450, 700, 60));
 
-        jPanel3.setBackground(new java.awt.Color(153, 153, 153));
-        jPanel3.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel3.addMouseListener(new java.awt.event.MouseAdapter() {
+        PN_Salir.setBackground(new java.awt.Color(153, 153, 153));
+        PN_Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        PN_Salir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jPanel3MouseClicked(evt);
+                PN_SalirMouseClicked(evt);
             }
         });
 
         LB_salir.setForeground(new java.awt.Color(0, 0, 0));
         LB_salir.setText("X");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout PN_SalirLayout = new javax.swing.GroupLayout(PN_Salir);
+        PN_Salir.setLayout(PN_SalirLayout);
+        PN_SalirLayout.setHorizontalGroup(
+            PN_SalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PN_SalirLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(LB_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        PN_SalirLayout.setVerticalGroup(
+            PN_SalirLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(PN_SalirLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(LB_salir, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 20, 30));
+        jPanel1.add(PN_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 20, 30));
 
         MB_menu.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -143,13 +276,23 @@ public class BoroaLeague extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jPanel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel3MouseClicked
+    private void PN_SalirMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PN_SalirMouseClicked
         System.exit(0);
-    }//GEN-LAST:event_jPanel3MouseClicked
+    }//GEN-LAST:event_PN_SalirMouseClicked
 
-    /**
-     * @param args the command line arguments
-     */
+    private void LB_CrearEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LB_CrearEquipoMouseClicked
+        this.setVisible(false);
+        CrearEquipo(true);
+    }//GEN-LAST:event_LB_CrearEquipoMouseClicked
+
+    private void PN_SalirCEMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PN_SalirCEMouseClicked
+        DG_CraerJEquipo.setVisible(false);
+        this.pack();
+        this.setLocationRelativeTo(null);
+        this.setVisible(true);
+    }//GEN-LAST:event_PN_SalirCEMouseClicked
+
+    
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -189,22 +332,48 @@ public class BoroaLeague extends javax.swing.JFrame {
         nomLabel.setIcon(icon);
         this.repaint();
     }
+    
+    public void CrearEquipo(boolean vista){
+        DG_CraerJEquipo.pack();
+        DG_CraerJEquipo.setLocationRelativeTo(this);
+        setimageLabel(LB_FifaLogo, "src/imagen/LogoFifa.png");
+        DG_CraerJEquipo.setModal(vista);
+        DG_CraerJEquipo.setVisible(vista);
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JDialog DG_CraerJEquipo;
     private javax.swing.JLabel LB_CraerJugador;
     private javax.swing.JLabel LB_CrearEquipo;
+    private javax.swing.JLabel LB_FifaLogo;
     private javax.swing.JLabel LB_Transferir;
     private javax.swing.JLabel LB_logoleague;
     private javax.swing.JLabel LB_salir;
+    private javax.swing.JLabel LB_salir1;
     private javax.swing.JMenuBar MB_menu;
     private javax.swing.JMenuItem MI_CraerJugador;
     private javax.swing.JMenuItem MI_CrearEquipo;
     private javax.swing.JMenuItem MI_Transferir;
     private javax.swing.JMenu M_Ayuda;
     private javax.swing.JMenu M_Opciones;
+    private javax.swing.JPanel PN_Salir;
+    private javax.swing.JPanel PN_SalirCE;
     private javax.swing.JToolBar TB_AdminMenu;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JToolBar.Separator jSeparator1;
+    private javax.swing.JToolBar.Separator jSeparator2;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }
