@@ -1,19 +1,22 @@
 package League_Package;
 
-public class Equipo {
+public class Equipos {
 
     private String nombre, pais, ciudad, estadio;
 
-    public Equipo() {
+    public Equipos() {
     }
 
-    public Equipo(String nombre, String pais, String ciudad, String estadio) {
+    public Equipos(String nombre, String pais) {
         this.nombre = nombre;
         this.pais = pais;
-        this.ciudad = ciudad;
-        this.estadio = estadio;
     }
 
+    public Equipos(String nombre) {
+        this.nombre = nombre;
+    }
+    
+    
     public String getNombre() {
         return nombre;
     }
@@ -48,7 +51,8 @@ public class Equipo {
 
     @Override
     public String toString() {
-        return "Equipo{" + "nombre=" + nombre + ", pais=" + pais + ", ciudad=" + ciudad + ", estadio=" + estadio + '}';
+        return nombre;
     }
+
     
 }
