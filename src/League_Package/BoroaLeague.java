@@ -1,14 +1,19 @@
 package League_Package;
 
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.DefaultListModel;
+import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 
 public class BoroaLeague extends javax.swing.JFrame {
+
     //commit 4:55
     public BoroaLeague() {
         initComponents();
@@ -71,6 +76,8 @@ public class BoroaLeague extends javax.swing.JFrame {
         jLabel12 = new javax.swing.JLabel();
         jPanel7 = new javax.swing.JPanel();
         LB_Transferirbuttun = new javax.swing.JLabel();
+        PM_jugadores = new javax.swing.JPopupMenu();
+        MI_modificar = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         TB_AdminMenu = new javax.swing.JToolBar();
         LB_CrearEquipo = new javax.swing.JLabel();
@@ -82,6 +89,7 @@ public class BoroaLeague extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         PN_Salir = new javax.swing.JPanel();
         LB_salir = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         MB_menu = new javax.swing.JMenuBar();
         M_Opciones = new javax.swing.JMenu();
         MI_CrearEquipo = new javax.swing.JMenuItem();
@@ -342,6 +350,11 @@ public class BoroaLeague extends javax.swing.JFrame {
         );
 
         LS_Jugadores.setModel(new DefaultListModel());
+        LS_Jugadores.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LS_JugadoresMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(LS_Jugadores);
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Equipos");
@@ -444,8 +457,17 @@ public class BoroaLeague extends javax.swing.JFrame {
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
+        MI_modificar.setText("Modificar");
+        MI_modificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_modificarActionPerformed(evt);
+            }
+        });
+        PM_jugadores.add(MI_modificar);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(0, 102, 102));
         jPanel1.setForeground(new java.awt.Color(0, 153, 153));
@@ -485,7 +507,7 @@ public class BoroaLeague extends javax.swing.JFrame {
         TB_AdminMenu.add(LB_Transferir);
 
         jPanel1.add(TB_AdminMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 300, 40));
-        jPanel1.add(LB_logoleague, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, 600, 380));
+        jPanel1.add(LB_logoleague, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 370, 360));
 
         jPanel2.setBackground(new java.awt.Color(60, 105, 105));
 
@@ -530,7 +552,15 @@ public class BoroaLeague extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel1.add(PN_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 10, 20, 30));
+        jPanel1.add(PN_Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 10, 20, 30));
+
+        jLabel13.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel13.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel13.setText("Bienvenido a Borea League Fantasy");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 420, -1));
 
         MB_menu.setBackground(new java.awt.Color(204, 204, 204));
 
@@ -569,17 +599,6 @@ public class BoroaLeague extends javax.swing.JFrame {
         MB_menu.add(M_Ayuda);
 
         setJMenuBar(MB_menu);
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -637,25 +656,42 @@ public class BoroaLeague extends javax.swing.JFrame {
 
     private void LB_TransferirbuttunMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LB_TransferirbuttunMouseClicked
 
-        
         if (LS_Jugadores.getSelectedIndex() >= 0) {
-            if (JT_Equipos.getSelectionCount() > 0) {
-             
+            DefaultMutableTreeNode nodoSelc = (DefaultMutableTreeNode) JT_Equipos.getSelectionPath().getLastPathComponent();
+            if (nodoSelc.getUserObject() instanceof Equipos) {
+
                 DefaultTreeModel modeloTree = (DefaultTreeModel) JT_Equipos.getModel();
-                DefaultMutableTreeNode raiz =(DefaultMutableTreeNode)modeloTree.getRoot();
-                
+                DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloTree.getRoot();
+
                 DefaultListModel modeloLista = (DefaultListModel) LS_Jugadores.getModel();
-                
+
                 String nombre, posicion;
-                nombre = ((Jugador)modeloLista.get(LS_Jugadores.getSelectedIndex())).getNombre();
-                posicion = ((Jugador)modeloLista.get(LS_Jugadores.getSelectedIndex())).getPosicion();
-                
-//                JT_Equipos.getse
-                
-                
+                nombre = ((Jugador) modeloLista.get(LS_Jugadores.getSelectedIndex())).getNombre();
+                posicion = ((Jugador) modeloLista.get(LS_Jugadores.getSelectedIndex())).getPosicion();
+
+                boolean noExistePos = true;
+                for (int i = 0; i < raiz.getChildCount(); i++) {
+                    if (nodoSelc.getChildCount() > 0) {
+                        if (nodoSelc.getChildAt(i).toString().equals(posicion)) {
+                            DefaultMutableTreeNode j = new DefaultMutableTreeNode((String) nombre);
+                            ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(j);
+                            noExistePos = false;
+                        }
+                    }
+                }
+
+                if (noExistePos) {
+                    DefaultMutableTreeNode p = new DefaultMutableTreeNode((String) posicion);
+                    DefaultMutableTreeNode j = new DefaultMutableTreeNode((String) nombre);
+
+                    p.add(j);
+                    nodoSelc.add(p);
+                    raiz.add(nodoSelc);
+
+                }
+                modeloTree.reload();
             }
         }
-        
 
     }//GEN-LAST:event_LB_TransferirbuttunMouseClicked
 
@@ -664,17 +700,17 @@ public class BoroaLeague extends javax.swing.JFrame {
         DefaultTreeModel modelo = (DefaultTreeModel) JT_Equipos.getModel();
         DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modelo.getRoot();
 
-        int bandera = -1;
+        boolean noExitse = true;
         for (int i = 0; i < raiz.getChildCount(); i++) {
             if (raiz.getChildAt(i).toString().equals(TF_addPais.getText())) {
                 DefaultMutableTreeNode e = new DefaultMutableTreeNode(new Equipos(
                         TF_addNombreEquipo.getText(), TF_addPais.getText()));
                 ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(e);
-                bandera = 1;
+                noExitse = false;
             }
         }
 
-        if (bandera == -1) {
+        if (noExitse) {
             DefaultMutableTreeNode p = new DefaultMutableTreeNode(TF_addPais.getText());
             DefaultMutableTreeNode e = new DefaultMutableTreeNode(new Equipos(
                     TF_addNombreEquipo.getText(), TF_addPais.getText()));
@@ -687,16 +723,16 @@ public class BoroaLeague extends javax.swing.JFrame {
         TF_addPais.setText("");
         TF_addEstadio.setText("");
         TF_addNombreEquipo.setText("");
-        
+
     }//GEN-LAST:event_LB_AgegarEquipoMouseClicked
 
     private void MI_CrearEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_CrearEquipoActionPerformed
-       this.setVisible(false);
+        this.setVisible(false);
         AbrirMenuCrearEquipo(true);
     }//GEN-LAST:event_MI_CrearEquipoActionPerformed
 
     private void MI_CraerJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_CraerJugadorActionPerformed
-       this.setVisible(false);
+        this.setVisible(false);
         AbrirMenuCraerJugador(true);
     }//GEN-LAST:event_MI_CraerJugadorActionPerformed
 
@@ -704,6 +740,42 @@ public class BoroaLeague extends javax.swing.JFrame {
         this.setVisible(false);
         AbrirMenuTransferir(true);
     }//GEN-LAST:event_MI_TransferirActionPerformed
+
+    private void MI_modificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_modificarActionPerformed
+        if (LS_Jugadores.getSelectedIndex() >= 0) {
+            DefaultListModel listaM = (DefaultListModel) LS_Jugadores.getModel();
+            String nvNombre = JOptionPane.showInputDialog("Ingrese un nuevo nombre");
+            int nvEdad = Integer.parseInt(JOptionPane.showInputDialog("ingrese nueva edad"));
+
+            boolean valiNom = false;
+            for (int i = 0; i < nvNombre.length(); i++) {
+                if (Character.isDigit(nvNombre.charAt(i))) {
+                    valiNom = true;
+                    break;
+                }
+            }
+
+            if (valiNom) {
+                JOptionPane.showMessageDialog(this, "Nombre Invalido");
+            } else {
+
+                if (nvEdad >= 15 || nvEdad <= 45) {
+                    ((Jugador) listaM.get(LS_Jugadores.getSelectedIndex())).setNombre(nvNombre);
+                    ((Jugador) listaM.get(LS_Jugadores.getSelectedIndex())).setEdad(nvEdad);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Edad invalida");
+                }
+            }
+        }
+    }//GEN-LAST:event_MI_modificarActionPerformed
+
+    private void LS_JugadoresMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LS_JugadoresMouseClicked
+        if (LS_Jugadores.getSelectedIndex() >= 0) {
+            if (evt.isMetaDown()) {
+                PM_jugadores.show(evt.getComponent(), evt.getX(), evt.getY());
+            }
+        }
+    }//GEN-LAST:event_LS_JugadoresMouseClicked
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -768,10 +840,6 @@ public class BoroaLeague extends javax.swing.JFrame {
         DG_Transferir.setVisible(vista);
     }
 
-    public void crearEquipo() {
-
-    }
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> CB_posicion;
     private javax.swing.JDialog DG_CraerEquipo;
@@ -796,8 +864,10 @@ public class BoroaLeague extends javax.swing.JFrame {
     private javax.swing.JMenuItem MI_CraerJugador;
     private javax.swing.JMenuItem MI_CrearEquipo;
     private javax.swing.JMenuItem MI_Transferir;
+    private javax.swing.JMenuItem MI_modificar;
     private javax.swing.JMenu M_Ayuda;
     private javax.swing.JMenu M_Opciones;
+    private javax.swing.JPopupMenu PM_jugadores;
     private javax.swing.JPanel PN_AgregarEquipo;
     private javax.swing.JPanel PN_AgregarEquipo1;
     private javax.swing.JPanel PN_Salir;
@@ -815,6 +885,7 @@ public class BoroaLeague extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
