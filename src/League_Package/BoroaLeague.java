@@ -78,6 +78,7 @@ public class BoroaLeague extends javax.swing.JFrame {
         LB_Transferirbuttun = new javax.swing.JLabel();
         PM_jugadores = new javax.swing.JPopupMenu();
         MI_modificar = new javax.swing.JMenuItem();
+        MI_eliminarJugador = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         TB_AdminMenu = new javax.swing.JToolBar();
         LB_CrearEquipo = new javax.swing.JLabel();
@@ -465,6 +466,14 @@ public class BoroaLeague extends javax.swing.JFrame {
         });
         PM_jugadores.add(MI_modificar);
 
+        MI_eliminarJugador.setText("Eliminar");
+        MI_eliminarJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MI_eliminarJugadorActionPerformed(evt);
+            }
+        });
+        PM_jugadores.add(MI_eliminarJugador);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -673,26 +682,24 @@ public class BoroaLeague extends javax.swing.JFrame {
                 for (int i = 0; i < raiz.getChildCount(); i++) {
                     if (nodoSelc.getChildCount() > 0) {
                         if (nodoSelc.getChildAt(i).toString().equals(posicion)) {
-                            DefaultMutableTreeNode j = new DefaultMutableTreeNode((String) nombre);
-                            ((DefaultMutableTreeNode) raiz.getChildAt(i)).add(j);
+                            DefaultMutableTreeNode jugador = new DefaultMutableTreeNode((String) nombre);
+                            ((DefaultMutableTreeNode)nodoSelc.getChildAt(i)).add(jugador);
                             noExistePos = false;
                         }
                     }
                 }
 
                 if (noExistePos) {
-                    DefaultMutableTreeNode p = new DefaultMutableTreeNode((String) posicion);
-                    DefaultMutableTreeNode j = new DefaultMutableTreeNode((String) nombre);
+                    DefaultMutableTreeNode posiciones = new DefaultMutableTreeNode((String) posicion);
+                    DefaultMutableTreeNode jugador = new DefaultMutableTreeNode((String) nombre);
 
-                    p.add(j);
-                    nodoSelc.add(p);
-                    raiz.add(nodoSelc);
-
+                    posiciones.add(jugador);
+                    nodoSelc.add(posiciones);
                 }
                 modeloTree.reload();
+                
             }
         }
-
     }//GEN-LAST:event_LB_TransferirbuttunMouseClicked
 
     private void LB_AgegarEquipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LB_AgegarEquipoMouseClicked
@@ -754,11 +761,9 @@ public class BoroaLeague extends javax.swing.JFrame {
                     break;
                 }
             }
-
             if (valiNom) {
                 JOptionPane.showMessageDialog(this, "Nombre Invalido");
             } else {
-
                 if (nvEdad >= 15 || nvEdad <= 45) {
                     ((Jugador) listaM.get(LS_Jugadores.getSelectedIndex())).setNombre(nvNombre);
                     ((Jugador) listaM.get(LS_Jugadores.getSelectedIndex())).setEdad(nvEdad);
@@ -776,6 +781,10 @@ public class BoroaLeague extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_LS_JugadoresMouseClicked
+
+    private void MI_eliminarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MI_eliminarJugadorActionPerformed
+
+    }//GEN-LAST:event_MI_eliminarJugadorActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -864,6 +873,7 @@ public class BoroaLeague extends javax.swing.JFrame {
     private javax.swing.JMenuItem MI_CraerJugador;
     private javax.swing.JMenuItem MI_CrearEquipo;
     private javax.swing.JMenuItem MI_Transferir;
+    private javax.swing.JMenuItem MI_eliminarJugador;
     private javax.swing.JMenuItem MI_modificar;
     private javax.swing.JMenu M_Ayuda;
     private javax.swing.JMenu M_Opciones;
